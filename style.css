@@ -4,9 +4,15 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Robot", sans-serif;
   font-weight: 400;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -25,7 +31,7 @@ header li {
 header li a {
   text-decoration: none;
   color: #000;
-  font-size: clamp(0.75rem, 2vw, 1.5rem);
+  font-size: clamp(0.85rem, 2vw, 1.5rem);
   font-weight: 400;
   transition: color 0.2s ease;
 }
@@ -35,11 +41,201 @@ header li a:hover {
 }
 
 main {
-  margin: 1.25rem;
+  flex: 1;
+}
+
+main > section:not(#sobre) {
+  margin: clamp(0.85rem, 2vw, 1.75rem);
+}
+
+#inicio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+#inicio article {
+  max-width: 500px;
+  width: 100%;
+}
+#inicio h1 {
+  font-size: clamp(1.45rem, 2vw, 3.25rem);
+  font-weight: 700;
+  line-height: 2.25rem;
+}
+#inicio h2 {
+  font-size: clamp(1.45rem, 2vw, 3.25rem);
+  font-weight: 700;
+}
+#inicio h2 strong {
+  color: #6371ff;
+  font-weight: 700;
+}
+#inicio p {
+  padding: clamp(1.25rem, 2vw, 1.75rem) 0;
+  line-height: 1.5rem;
+}
+#inicio .red {
+  background-color: #ff6464;
+  border: solid #fff;
+  border-radius: 0.5rem;
+  padding: 0.5em 2em;
+  margin-inline-end: 2rem;
+}
+#inicio .red a {
+  text-decoration: none;
+  color: white;
+  font-family: "Heebo", sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.75rem, 2vw, 1.25rem);
+}
+#inicio .white {
+  background-color: #fff;
+  border: 2px solid #ff6464;
+  border-radius: 0.5rem;
+  padding: 0.5em 2em;
+}
+#inicio .white a {
+  text-decoration: none;
+  color: #ff6464;
+  font-family: "Heebo", sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.75rem, 2vw, 1.25rem);
+}
+#inicio img {
+  max-width: 500px;
+  width: 35%;
+}
+
+#formacoes {
+  margin: 2rem;
+  border: 5px solid mediumaquamarine;
+}
+#formacoes h2 {
+  padding-block: 0 0.9rem;
+  font-size: clamp(1.75rem, 2vw, 4rem);
+}
+#formacoes ul li {
+  list-style: none;
+  position: relative;
+  margin-top: clamp(1.25rem, 2vw, 2rem);
+}
+#formacoes ul li::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: #000;
+  clear: both;
+}
+#formacoes ul h3 {
+  margin-block-start: clamp(1.25em, 2vw, 2em);
+  font-size: clamp(1.5rem, 2vw, 2.25rem);
+}
+#formacoes ul p {
+  display: inline;
+  float: left;
+  vertical-align: middle;
+  color: rgba(0, 0, 0, 0.5019607843);
+}
+#formacoes ul time {
+  float: right;
+  padding: 0 0 1rem 0;
+  color: rgba(0, 0, 0, 0.5019607843);
+}
+
+#sobre {
+  background-color: rgba(255, 100, 100, 0.5019607843);
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em;
+}
+#sobre img {
+  width: 20%;
+}
+#sobre div {
+  max-width: 500px;
+  width: 50%;
+}
+#sobre div h2 + p {
+  padding: 0.5em 0;
+}
+#sobre div p {
+  font-size: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+#projetos {
+  margin: 2rem 0;
+}
+#projetos li {
+  list-style-type: none;
+}
+
+#contatos {
+  margin-block-end: 2rem;
+  background-color: rgba(255, 100, 100, 0.5019607843);
+}
+#contatos address {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+}
+#contatos address h2 {
+  margin-block-end: 0.5em;
+}
+#contatos address i {
+  margin-inline-end: 0.5em;
+}
+#contatos address a {
+  margin-block-end: 0.5em;
+  color: #1c1e53;
+  text-decoration: none;
 }
 
 @media (max-width: 480px) {
+  body {
+    scroll-snap-type: y mandatory;
+  }
   header ul {
     justify-content: center;
+  }
+  #inicio {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  #inicio article h1,
+  #inicio article h2, #inicio article p {
+    text-align: center;
+  }
+  #inicio .red {
+    margin-inline: 3.25rem;
+  }
+  #inicio img {
+    width: 90%;
+  }
+  #formacoes li p {
+    display: block;
+  }
+  #formacoes li time {
+    float: left;
+  }
+  #sobre {
+    flex-direction: column;
+    padding: 0.5em;
+  }
+  #sobre div {
+    flex: 1;
+    width: 100%;
+    padding: 0.5em;
+  }
+  #sobre div h2 {
+    text-align: center;
+  }
+  #sobre img {
+    display: inline-block;
+    width: 30%;
+    padding: 0.5em;
   }
 }/*# sourceMappingURL=style.css.map */
