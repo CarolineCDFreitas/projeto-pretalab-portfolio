@@ -4,9 +4,15 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Robot", sans-serif;
   font-weight: 400;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -35,12 +41,16 @@ header li a:hover {
 }
 
 main {
+  flex: 1;
+}
+
+main > section:not(#sobre) {
   margin: clamp(0.85rem, 2vw, 1.75rem);
 }
 
 #inicio {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   gap: 2rem;
 }
@@ -97,25 +107,106 @@ main {
   width: 35%;
 }
 
+#formacoes {
+  margin: 2rem;
+  border: 5px solid mediumaquamarine;
+}
+#formacoes h2 {
+  padding-block: 0 0.9rem;
+  font-size: clamp(1.75rem, 2vw, 4rem);
+}
 #formacoes ul li {
   list-style: none;
+  position: relative;
+  margin-top: clamp(1.25rem, 2vw, 2rem);
+}
+#formacoes ul li::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: #000;
+  clear: both;
+}
+#formacoes ul h3 {
+  margin-block-start: clamp(1.25em, 2vw, 2em);
+  font-size: clamp(1.5rem, 2vw, 2.25rem);
+}
+#formacoes ul p {
+  display: inline;
+  float: left;
+  vertical-align: middle;
+  color: rgba(0, 0, 0, 0.5019607843);
+}
+#formacoes ul time {
+  float: right;
+  padding: 0 0 1rem 0;
+  color: rgba(0, 0, 0, 0.5019607843);
 }
 
+#sobre {
+  background-color: rgba(255, 100, 100, 0.5019607843);
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em;
+}
 #sobre img {
+  width: 20%;
+}
+#sobre div {
+  max-width: 500px;
   width: 50%;
+}
+#sobre div h2 + p {
+  padding: 0.5em 0;
+}
+#sobre div p {
+  font-size: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+#projetos {
+  margin: 2rem 0;
+}
+#projetos li {
+  list-style-type: none;
+}
+
+#contatos {
+  margin-block-end: 2rem;
+  background-color: rgba(255, 100, 100, 0.5019607843);
+}
+#contatos address {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+}
+#contatos address h2 {
+  margin-block-end: 0.5em;
+}
+#contatos address i {
+  margin-inline-end: 0.5em;
+}
+#contatos address a {
+  margin-block-end: 0.5em;
+  color: #1c1e53;
+  text-decoration: none;
 }
 
 @media (max-width: 480px) {
+  body {
+    scroll-snap-type: y mandatory;
+  }
   header ul {
     justify-content: center;
   }
   #inicio {
     flex-direction: column;
     justify-content: space-evenly;
-    min-height: 100dvh;
   }
   #inicio article h1,
-  #inicio article h2 {
+  #inicio article h2, #inicio article p {
     text-align: center;
   }
   #inicio .red {
@@ -123,5 +214,28 @@ main {
   }
   #inicio img {
     width: 90%;
+  }
+  #formacoes li p {
+    display: block;
+  }
+  #formacoes li time {
+    float: left;
+  }
+  #sobre {
+    flex-direction: column;
+    padding: 0.5em;
+  }
+  #sobre div {
+    flex: 1;
+    width: 100%;
+    padding: 0.5em;
+  }
+  #sobre div h2 {
+    text-align: center;
+  }
+  #sobre img {
+    display: inline-block;
+    width: 30%;
+    padding: 0.5em;
   }
 }/*# sourceMappingURL=style.css.map */
