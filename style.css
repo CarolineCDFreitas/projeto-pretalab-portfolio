@@ -25,7 +25,7 @@ header li {
 header li a {
   text-decoration: none;
   color: #000;
-  font-size: clamp(0.75rem, 2vw, 1.5rem);
+  font-size: clamp(0.85rem, 2vw, 1.5rem);
   font-weight: 400;
   transition: color 0.2s ease;
 }
@@ -35,11 +35,93 @@ header li a:hover {
 }
 
 main {
-  margin: 1.25rem;
+  margin: clamp(0.85rem, 2vw, 1.75rem);
+}
+
+#inicio {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+}
+#inicio article {
+  max-width: 500px;
+  width: 100%;
+}
+#inicio h1 {
+  font-size: clamp(1.45rem, 2vw, 3.25rem);
+  font-weight: 700;
+  line-height: 2.25rem;
+}
+#inicio h2 {
+  font-size: clamp(1.45rem, 2vw, 3.25rem);
+  font-weight: 700;
+}
+#inicio h2 strong {
+  color: #6371ff;
+  font-weight: 700;
+}
+#inicio p {
+  padding: clamp(1.25rem, 2vw, 1.75rem) 0;
+  line-height: 1.5rem;
+}
+#inicio .red {
+  background-color: #ff6464;
+  border: solid #fff;
+  border-radius: 0.5rem;
+  padding: 0.5em 2em;
+  margin-inline-end: 2rem;
+}
+#inicio .red a {
+  text-decoration: none;
+  color: white;
+  font-family: "Heebo", sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.75rem, 2vw, 1.25rem);
+}
+#inicio .white {
+  background-color: #fff;
+  border: 2px solid #ff6464;
+  border-radius: 0.5rem;
+  padding: 0.5em 2em;
+}
+#inicio .white a {
+  text-decoration: none;
+  color: #ff6464;
+  font-family: "Heebo", sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.75rem, 2vw, 1.25rem);
+}
+#inicio img {
+  max-width: 500px;
+  width: 35%;
+}
+
+#formacoes ul li {
+  list-style: none;
+}
+
+#sobre img {
+  width: 50%;
 }
 
 @media (max-width: 480px) {
   header ul {
     justify-content: center;
+  }
+  #inicio {
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 100dvh;
+  }
+  #inicio article h1,
+  #inicio article h2 {
+    text-align: center;
+  }
+  #inicio .red {
+    margin-inline: 3.25rem;
+  }
+  #inicio img {
+    width: 90%;
   }
 }/*# sourceMappingURL=style.css.map */
