@@ -73,27 +73,25 @@ main > section:not(#sobre) {
   line-height: 1.5rem;
   padding: clamp(1.25rem, 2vw, 1.75rem) 0;
 }
-#inicio .red {
+#inicio div .red {
   background-color: #ff6464;
   border: solid #fff;
   border-radius: 0.5rem;
   padding: 0.5em 2em;
   margin-inline-end: 2rem;
-}
-#inicio .red a {
+  display: inline-block;
   font-family: "Heebo", sans-serif;
   font-weight: 500;
   font-size: clamp(0.75rem, 2vw, 1.25rem);
   text-decoration: none;
   color: white;
 }
-#inicio .white {
+#inicio div .white {
   background-color: #fff;
   border: 2px solid #ff6464;
   border-radius: 0.5rem;
   padding: 0.5em 2em;
-}
-#inicio .white a {
+  display: inline-block;
   font-family: "Heebo", sans-serif;
   font-weight: 500;
   font-size: clamp(0.75rem, 2vw, 1.25rem);
@@ -249,15 +247,13 @@ main > section:not(#sobre) {
   }
   #inicio {
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
   }
   #inicio article h1,
   #inicio article h2,
-  #inicio article p {
+  #inicio article p,
+  #inicio article div {
     text-align: center;
-  }
-  #inicio .red {
-    margin-inline: 3.25rem;
   }
   #inicio img {
     width: 90%;
@@ -305,14 +301,10 @@ main > section:not(#sobre) {
   #inicio .red:hover {
     background-color: #fff;
     border: 2px solid #ff6464;
-  }
-  #inicio .red:hover a {
     color: #ff6464;
   }
   #inicio .white:hover {
     background-color: #ff6464;
-  }
-  #inicio .white:hover a {
     color: #fff;
   }
 }/*# sourceMappingURL=style.css.map */
