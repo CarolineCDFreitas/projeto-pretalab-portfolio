@@ -301,14 +301,10 @@ main > section:not(#sobre) {
   #inicio .red:hover {
     background-color: #fff;
     border: 2px solid #ff6464;
-  }
-  #inicio .red:hover a {
     color: #ff6464;
   }
   #inicio .white:hover {
     background-color: #ff6464;
-  }
-  #inicio .white:hover a {
     color: #fff;
   }
 } 
