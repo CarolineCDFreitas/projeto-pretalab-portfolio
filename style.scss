@@ -1,0 +1,379 @@
+//com sass
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+header {
+  box-shadow: 0 0.25rem 0.125rem 0 #00000040;
+
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: clamp(0.25rem, 2vw, 1rem);
+  }
+
+  li {
+    list-style-type: none;
+    padding-inline: 0.75rem;
+
+    a {
+      font-size: clamp(0.85rem, 2vw, 1.5rem);
+      font-weight: 400;
+      text-decoration: none;
+      color: #000;
+      transition: color 0.2s ease;
+
+      &:hover {
+        font-weight: 700;
+        color: #6371ff;
+      }
+    }
+  }
+}
+
+main {
+  flex: 1;
+}
+
+main > section:not(#sobre) {
+  margin: clamp(0.85rem, 2vw, 1.75rem);
+}
+
+#inicio {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 0 2rem;
+
+  h1 {
+    font-size: clamp(1.45rem, 2.5vw, 4rem);
+    font-weight: 700;
+    line-height: 2.25rem;
+  }
+
+  h2 {
+    font-size: clamp(1.45rem, 2.5vw, 4rem);
+    font-weight: 700;
+
+    strong {
+      font-weight: 700;
+      color: #6371ff;
+    }
+  }
+
+  p {
+    font-size: clamp(0.75rem, 5vw, 1.25rem);
+    line-height: 1.5rem;
+    padding: clamp(1.25rem, 2vw, 1.75rem) 0;
+  }
+
+  .red {
+    background-color: #ff6464;
+    border: solid #fff;
+    border-radius: 0.5rem;
+    padding: 0.5em 2em;
+    margin-inline-end: 2rem;
+
+    a {
+      font-family: "Heebo", sans-serif;
+      font-weight: 500;
+      font-size: clamp(0.75rem, 2vw, 1.25rem);
+      text-decoration: none;
+      color: white;
+    }
+  }
+
+  .white {
+    background-color: #fff;
+    border: 2px solid #ff6464;
+    border-radius: 0.5rem;
+    padding: 0.5em 2em;
+    a {
+      font-family: "Heebo", sans-serif;
+      font-weight: 500;
+      font-size: clamp(0.75rem, 2vw, 1.25rem);
+      text-decoration: none;
+      color: #ff6464;
+    }
+  }
+
+  img {
+    max-width: 500px;
+    width: 35%;
+  }
+}
+
+#formacoes {
+  padding: 1.5rem 0;
+
+  h2 {
+    font-size: clamp(1.75rem, 2vw, 3.25rem);
+  }
+  ul {
+    li {
+      list-style: none;
+      position: relative;
+      margin-top: clamp(1.25rem, 2vw, 2rem);
+
+      &::after {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: #000;
+        clear: both;
+      }
+    }
+
+    h3 {
+      font-size: clamp(1.5rem, 1.5vw, 2.25rem);
+      margin-block-start: clamp(1.25em, 2vw, 2em);
+    }
+
+    p {
+      display: inline;
+      font-size: clamp(1rem, 1.2vw, 2rem);
+      font-weight: 400;
+      float: left;
+      vertical-align: middle;
+      color: #00000080;
+    }
+
+    .time {
+      float: right;
+      font-size: clamp(0.75rem, 1vw, 1.5rem);
+
+      time {
+        font-size: clamp(0.75rem, 1vw, 1.5rem);
+        color: #00000080;
+      }
+    }
+  }
+}
+
+#sobre {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 4rem;
+  padding: 2em;
+  background-color: #ff646480;
+  img {
+    width: 30%;
+  }
+
+  div {
+    max-width: 500px;
+    width: 50%;
+
+    h2 {
+      font-size: clamp(1.75rem, 2.5vw, 3.25rem);
+
+      color: #1c1e53;
+    }
+
+    h2 + p {
+      padding: 0.5em 0;
+    }
+
+    p {
+      font-size: clamp(0.75rem, 5vw, 1.25rem);
+      color: #1c1e53;
+    }
+  }
+}
+
+#projetos {
+  margin: 4rem 0;
+
+  h2 {
+    font-size: clamp(1.75rem, 2vw, 3.25rem);
+    color: #282938;
+  }
+
+  li {
+    list-style-type: none;
+    margin-block: 0.5em;
+
+    h3 {
+      font-size: clamp(1.5rem, 1.5vw, 2.25rem);
+    }
+    a {
+      display: block;
+      width: fit-content;
+      text-decoration: none;
+      color: #000;
+
+      margin: 0.5em 0;
+
+      &:hover {
+        color: #ff646480;
+        font-weight: 700;
+      }
+
+      &:last-child {
+        margin-block-end: 0.7em;
+      }
+    }
+
+    p {
+      font-size: clamp(1rem, 1vw, 2rem);
+      font-weight: 700;
+      padding-block: 0.5em;
+      color: #00000080;
+      abbr {
+        text-decoration: none;
+      }
+      strong,
+      em {
+        color: #00000099;
+      }
+    }
+  }
+}
+
+#contatos {
+  padding-left: 1rem;
+  background-color: #ff646480;
+  address {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+    h2 {
+      font-size: clamp(1.75rem, 2vw, 3.25rem);
+      margin-block-end: 0.5em;
+    }
+
+    i {
+      margin-inline-end: 0.5em;
+    }
+    a {
+      display: inline-block;
+      width: fit-content;
+      margin-block-end: 0.5em;
+      color: #1c1e53;
+      text-decoration: none;
+      text-align: left;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    scroll-snap-type: y mandatory;
+  }
+  header {
+    ul {
+      justify-content: center;
+    }
+  }
+
+  #inicio {
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    article {
+      h1,
+      h2,
+      p {
+        text-align: center;
+      }
+    }
+
+    .red {
+      margin-inline: 3.25rem;
+    }
+    img {
+      width: 90%;
+    }
+  }
+
+  #formacoes {
+    margin: 3rem 0;
+    li {
+      h3 {
+        margin-block-end: 0.5em;
+      }
+      p,
+      .time {
+        display: block;
+        float: none;
+      }
+    }
+  }
+
+  #sobre {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5em;
+    div {
+      width: 100%;
+      padding: 0.5em;
+      h2 {
+        text-align: center;
+      }
+    }
+    img {
+      display: inline-block;
+      width: 50%;
+      padding: 0.5em;
+    }
+  }
+
+  #projetos {
+    li {
+      p {
+        text-align: justify;
+      }
+    }
+  }
+
+  #contatos {
+    text-align: center;
+    padding: 0;
+
+    address {
+      align-items: center;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  #inicio {
+    .red {
+      &:hover {
+        background-color: #fff;
+        border: 2px solid #ff6464;
+
+        a {
+          color: #ff6464;
+        }
+      }
+    }
+
+    .white {
+      &:hover {
+        background-color: #ff6464;
+
+        a {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
