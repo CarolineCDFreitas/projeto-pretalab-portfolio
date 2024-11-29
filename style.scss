@@ -1,4 +1,3 @@
-//com sass
 * {
   margin: 0;
   padding: 0;
@@ -148,7 +147,6 @@ main > section:not(#sobre) {
     p {
       display: inline;
       font-size: clamp(1rem, 1.2vw, 2rem);
-      font-weight: 400;
       float: left;
       vertical-align: middle;
       color: #00000080;
